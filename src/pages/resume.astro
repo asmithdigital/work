@@ -1,30 +1,25 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import "../styles/case-study.css";
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import '../styles/portfolio.css';
 ---
 <Layout title="Resume | Andrew Smith" description="Resume of Andrew Smith, product designer and front-end developer." showFooterCta={true}>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="case-page">
-    <SiteHeader />
-    <main id="main-content">
-      <section class="case-hero">
-        <p class="eyebrow"><a class="breadcrumb-link" href="/work/">Home</a><span class="breadcrumb-separator">/</span><span>Resume</span></p>
-        <h1 class="display-title">Developer, then designer, then leader.</h1>
-        <p class="hero-text">Twenty years from hand-coded websites to product design in Agile squads. Currently studying product management.</p>
-        <p class="hero-subtext"><a href="/work/Andrew_Smith_Resume.docx">Download resume (Word)</a> &nbsp;·&nbsp; asmithdigital@gmail.com</p>
-      </section>
-      <section class="content-section"><div class="section-content">
-        <p class="section-kicker">2019 – present</p><h2>Senior UX Design Lead &amp; Manager, Digital UX — RAA</h2>
-        <p>Lead product design across travel, insurance, payments and member services in Agile squads, run discovery and design sprints, prototype in code, and built research operations, journey mapping and design system governance. Since 2025, also manage the UX team.</p>
-        <p class="section-kicker">2014 – 2019</p><h2>Lead Web Designer, Senior UX Designer &amp; Front-End Developer — University of Adelaide</h2>
-        <p>Designed and built the university's websites and portals, introduced UX practice and built a JavaScript design system adopted across all development teams.</p>
-        <p class="section-kicker">Earlier career</p><h2>Viterra · Private Media · Vmedia · asmithdigital · Tower Hotel</h2>
-        <p>Web design, front-end development, digital production and client management from 1999, plus freelance design and development since 2004.</p>
-        <p class="section-kicker">Study</p><h2>Product Management · Applied Project Management (Grad. Cert., in progress)</h2>
-        <p>Also: Certificate in User Experience (Nielsen Norman Group), Human Centred Design, User Experience and Usability, Multimedia Studies (Bachelor, University of South Australia).</p>
-      </div></section>
-    </main>
-  </div>
-</Layout>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<SiteHeader />
+<main id="main-content" class="resume">
+<section class="hero"><p class="eyebrow">Resume</p><h1>Developer, then designer, then leader.</h1><p class="hero-lede">Twenty years from hand-coded websites to product design in Agile squads. Currently studying product management. <a href="/work/Andrew_Smith_Resume.docx">Download the Word resume</a>.</p></section>
+<div class="doc"><div class="doc-body">
+<div class="role"><h3>Senior UX Design Lead &amp; Manager, Digital UX — RAA</h3><p class="meta">2019 – present</p><ul>
+<li>Lead end-to-end UX and UI across RAA Travel (online search and book, and the travel agent booking system integrated with middleware), My Account, payments, renewals, claims and identity management.</li>
+<li>Run discovery and delivery in parallel: member interviews, analytics review, design sprints and workshops.</li>
+<li>Facilitated a design sprint that identified member identity matching, not payment options, as the real conversion blocker. It redirected the roadmap, and authenticated quote-to-buy is live for motor insurance.</li>
+<li>Built research operations from scratch, introduced journey mapping and UX benchmarking, and contribute to design system governance, including a Vision Australia accessibility partnership.</li>
+<li>Prototype working applications in code with AI tools, and manage the UX team.</li></ul></div>
+<div class="role"><h3>Lead Web Designer, Senior UX Designer &amp; Front-End Developer — University of Adelaide</h3><p class="meta">2014 – 2019</p><ul>
+<li>Designed and built the public website, student portals and digital products in HTML, CSS and JavaScript.</li>
+<li>Custom-built a JavaScript design system adopted across all development teams.</li>
+<li>Introduced UX as a formal practice, now a full UX department.</li></ul></div>
+<div class="role"><h3>Earlier career</h3><ul>
+<li>Web Designer and Coordinator, Viterra (2011 – 2013)</li><li>Digital Producer, Private Media (2010 – 2011)</li><li>Web Designer and Account Manager, Vmedia (2008 – 2010)</li><li>Freelance Web Designer and Developer, asmithdigital (2004 – present)</li><li>Hotel Duty Manager, Tower Hotel (1999 – 2008)</li></ul></div>
+<div class="role"><h3>Study</h3><ul><li>Product Management, Udemy</li><li>Applied Project Management (Grad. Cert., in progress), University of Adelaide</li><li>Certificate in User Experience, Nielsen Norman Group</li><li>Human Centred Design, thishuman.com · User Experience and Usability, Userfocus</li><li>Multimedia Studies (Bachelor), University of South Australia</li></ul></div>
+</div></div></main></Layout>

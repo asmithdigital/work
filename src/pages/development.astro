@@ -1,48 +1,77 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import "../styles/case-study.css";
-import ds1 from '../assets/images/design-system-1.png';
-import ds2 from '../assets/images/design-system-2.png';
-import btn from '../assets/images/raa-ds-buttons.png';
-import uofa from '../assets/images/uofa-banner.png';
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Toc from '../components/Toc.astro';
+import FreelanceChapter from '../components/FreelanceChapter.astro';
+import { Image } from 'astro:assets';
+import '../styles/portfolio.css';
+import hA from '../assets/images/design-system-2.png';
+import hB from '../assets/images/uofa-banner.png';
+import u1 from '../assets/images/uofa-banner.png';
+import u2 from '../assets/images/uofa-subpage.png';
+import u3 from '../assets/images/uofa-styleguide.png';
+import u4 from '../assets/images/uofa-mobile-global-menu.png';
+import d1 from '../assets/images/design-system-1.png';
+import d2 from '../assets/images/raa-ds-buttons.png';
+import d3 from '../assets/images/design-system-2.png';
+import d4 from '../assets/images/raa-app-ds-alerts.png';
+import ai_orchestration from '../assets/images/claude-orchestration-layer-diagram.png';
+import ai_journeyMap1 from '../assets/images/journey-map-1.png';
+import ai_travelWireframes from '../assets/images/travel-sd-wireframes.png';
+const toc = [{"id": "story", "title": "Coding background", "subs": [{"id": "story-1", "title": "Self-taught"}, {"id": "story-2", "title": "Agency and media"}]}, {"id": "university", "title": "University of Adelaide", "subs": [{"id": "university-1", "title": "The web estate"}, {"id": "university-2", "title": "Design system"}, {"id": "university-3", "title": "Introducing UX"}]}, {"id": "design-system-code", "title": "Design systems in code", "subs": [{"id": "design-system-code-1", "title": "Components"}, {"id": "design-system-code-2", "title": "Documentation"}]}, {"id": "ai-prototyping", "title": "Rapid prototyping & AI-assisted workflows", "subs": [{"id": "ai-prototyping-1", "title": "The Principle"}, {"id": "ai-prototyping-2", "title": "Research Synthesis"}, {"id": "ai-prototyping-3", "title": "Rapid Prototyping"}, {"id": "ai-prototyping-4", "title": "Orchestration Layer"}]}, {"id": "freelance", "title": "Freelance & graphic design", "subs": []}];
 ---
-<Layout title="Development | Andrew Smith" description="Front-end development from hand-coded websites to a JavaScript design system and working prototypes." showFooterCta={true}>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="case-page">
-    <SiteHeader />
-    <main id="main-content">
-      <section class="case-hero">
-        <p class="eyebrow"><a class="breadcrumb-link" href="/work/">Home</a><span class="breadcrumb-separator">/</span><span>Development</span></p>
-        <h1 class="display-title">I started in code, and I still write it.</h1>
-        <p class="hero-text">I began as a self-taught web designer and front-end developer, hand-coding HTML, CSS and JavaScript for clients. That background shapes how I design: feasibility conversations with engineers start from shared understanding.</p>
-      </section>
-      <section class="lead-image-section"><Image class="lead-image" src={ds1} alt="Design system component documentation" /></section>
-      <section class="content-section">
-        <div class="section-content">
-          <p class="section-kicker">Early career</p>
-          <h2>Building websites since 1999.</h2>
-          <p>Agency, media and corporate work, including hand-coded client sites at Vmedia and a CMS platform delivered with an offshore development team at Viterra. Freelance design and development has run alongside every role since 2004.</p>
+<Layout title="Development | Andrew Smith" description="Front-end development from hand-coded websites to a JavaScript design system, design tokens and AI-assisted prototyping." showFooterCta={true}>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<SiteHeader />
+<main id="main-content" class="doc-page">
+<section class="hero"><p class="eyebrow">Development</p><h1>Twenty years of code, from hand-built sites to design systems.</h1><p class="hero-lede">I started as a front-end developer, and that background shapes how I design: working alongside engineers, building a design system in code, and prototyping working applications today.</p><div class="hero-media"><Image src={hA} alt="Design system" /><Image src={hB} alt="University of Adelaide" /></div></section>
+<div class="doc"><Toc items={toc} /><div class="doc-body">
+<section class="chapter" id="story"><header class="chapter-head"><p class="chapter-no">01</p><h2>Coding background</h2><p class="claim">I started in code, and I still write it.</p></header><div class="sub" id="story-1"><p class="section-kicker">Self-taught</p><h3>Hand-coded websites since the start</h3><div class="sub-grid"><div class="sub-text"><p>I began as a self-taught web designer and front-end developer, hand-coding HTML, CSS and JavaScript for clients. Freelance design and development has run alongside every role since 2004, for clients from small businesses to advertising agencies.</p></div><div class="sub-media"></div></div></div><div class="sub" id="story-2"><p class="section-kicker">Agency and media</p><h3>Design and development across agency, media and corporate teams</h3><div class="sub-grid"><div class="sub-text"><p>At Vmedia I designed and developed client websites in content management systems and hand-coded HTML, CSS and JavaScript. At Private Media I produced digital assets and animated advertising for online news platforms. At Viterra I was lead designer and liaison between an IBM offshore development team and business stakeholders across Australia and Canada, delivering a new CMS platform for the business.</p></div><div class="sub-media"></div></div></div></section>
+<section class="chapter" id="university"><header class="chapter-head"><p class="chapter-no">02</p><h2>University of Adelaide</h2><p class="claim">Lead web designer and front-end developer.</p></header><div class="sub" id="university-1"><p class="section-kicker">The web estate</p><h3>Designing and building the university website and student portals</h3><div class="sub-grid"><div class="sub-text"><p>I designed and developed the university's public website, student portals and digital products in HTML, CSS and JavaScript, working alongside engineers on architecture, Git workflows, component frameworks and Agile SCRUM delivery.</p></div><div class="sub-media"><Image class="aside-img" src={u1} alt="University of Adelaide website banner" loading="lazy" /><Image class="aside-img" src={u2} alt="University of Adelaide subpage" loading="lazy" /></div></div></div><div class="sub" id="university-2"><p class="section-kicker">Design system</p><h3>A JavaScript design system adopted across every team</h3><div class="sub-grid"><div class="sub-text"><p>I custom-built a JavaScript-based design system adopted across all university development teams, establishing shared standards and significantly reducing rework.</p></div><div class="sub-media"><Image class="aside-img" src={u3} alt="University style guide" loading="lazy" /></div></div></div><div class="sub" id="university-3"><p class="section-kicker">Introducing UX</p><h3>From front-end build to a formal UX practice</h3><div class="sub-grid"><div class="sub-text"><p>Working with students and staff, I introduced UX as a formal practice: interviews, usability and A/B testing, and workshops to define user stories. It has since grown into a full UX department.</p></div><div class="sub-media"><Image class="aside-img" src={u4} alt="University mobile global menu" loading="lazy" /></div></div></div></section>
+<section class="chapter" id="design-system-code"><header class="chapter-head"><p class="chapter-no">03</p><h2>Design systems in code</h2><p class="claim">Components, tokens and documentation that engineers and designers share.</p></header><div class="sub" id="design-system-code-1"><p class="section-kicker">Components</p><h3>A component library built to be used</h3><div class="sub-grid"><div class="sub-text"><p>I work on the component library, token architecture and documentation so that what is designed in Figma is what is built in code, with accessibility (WCAG) embedded at component level through a partnership with Vision Australia.</p></div><div class="sub-media"><Image class="aside-img" src={d1} alt="Design system component documentation" loading="lazy" /><Image class="aside-img" src={d2} alt="Design system buttons" loading="lazy" /></div></div></div><div class="sub" id="design-system-code-2"><p class="section-kicker">Documentation</p><h3>Anatomy, usage and states documented once</h3><div class="sub-grid"><div class="sub-text"><p>Each component is documented with anatomy, usage guidance and states, so engineers and designers work from the same reference.</p></div><div class="sub-media"><Image class="aside-img" src={d3} alt="Component anatomy and usage" loading="lazy" /><Image class="aside-img" src={d4} alt="Alerts in the app design system" loading="lazy" /></div></div></div></section>
+<section class="chapter" id="ai-prototyping"><header class="chapter-head"><p class="chapter-no">04</p><h2>Rapid prototyping & AI-assisted workflows</h2><p class="claim">AI in the design and product process.</p><p class="lede">AI tools are most useful when they reduce the overhead that competes with the work that requires judgment. Synthesis, documentation, spec generation, pattern identification — when AI handles these, the time that is freed up goes toward discovery, testing, and the decisions that actually move product quality forward.</p><p class="note">Faster discovery means the business can validate or redirect product decisions faster. That is a business outcome argument, not a craft efficiency argument.</p></header><div class="meta-strip">
+        <div><p class="meta-label">Scope</p><p class="meta-value">Research, design, delivery, knowledge management</p></div>
+        <div><p class="meta-label">Role</p><p class="meta-value">UX Manager, Senior UX Design Lead</p></div>
+        <div><p class="meta-label">Tools</p><p class="meta-value">Claude, Figma AI, journey management AI, UserTesting</p></div>
+      </div><div class="wide">
+        <Image class="lead-image" src={ai_orchestration} alt="Experience Design operating model showing AI orchestration layer connecting all tools and knowledge sources" decoding="async" widths={[720,1080,1440]} sizes="(max-width:78rem) 100vw, 78rem"/>
+      </div><div class="sub" id="ai-prototyping-1"><p class="section-kicker">The Principle</p><h3>Faster discovery means better product decisions, sooner.</h3><div class="sub-grid">
+        
+        
+        <div class="summary-body">
+          <p>When AI compresses the time it takes to synthesise research, generate journey map structures from raw notes, or produce component documentation from a design file, the gain is not just hours saved. It is earlier access to the insight that would have taken a week to surface manually — which means product decisions get better information sooner, and the cost of being wrong about a direction is lower.</p>
+          <p>This framing shapes how AI has been used across the team's process. Not as a way to do design faster at the expense of quality, but as a way to reduce the administrative overhead that competes with quality.</p>
         </div>
-        <div class="section-image"><Image class="aside-img" src={btn} alt="Design system button components" loading="lazy" /></div>
-      </section>
-      <section class="content-section">
-        <div class="section-content">
-          <p class="section-kicker">University of Adelaide</p>
-          <h2>A JavaScript design system adopted across every development team.</h2>
-          <p>As lead web designer and front-end developer I designed and built the university's public website and student portals, worked with engineers on architecture, Git workflows and component frameworks, and custom-built a JavaScript design system that established shared standards and reduced rework. I introduced UX as a formal practice there, and it has since grown into a full UX department.</p>
+      </div></div><div class="sub" id="ai-prototyping-2"><p class="section-kicker">Research Synthesis</p><h3>From raw sessions to actionable insights faster.</h3><div class="sub-grid">
+        <div class="sub-text">
+          
+          
+          <p>Research synthesis is one of the most time-consuming parts of discovery — reading session transcripts, tagging observations, identifying patterns across participants, and turning raw notes into a coherent problem statement. AI tools now assist with all of this.</p>
+          <p>The practical outcome: a research round that previously took several days to synthesise can be turned around in hours. The designer spends their time reviewing and refining AI-generated patterns rather than building them from scratch. The quality of the insight is the same. The time to action is significantly shorter.</p>
         </div>
-        <div class="section-image"><Image class="aside-img" src={uofa} alt="University of Adelaide website" loading="lazy" /></div>
-      </section>
-      <section class="content-section">
-        <div class="section-content">
-          <p class="section-kicker">Today</p>
-          <h2>Rapid prototyping and design systems in code.</h2>
-          <p>I still write code, now with AI tools, to build working prototypes, design tokens and design system components. A working prototype lets the team test feasibility and desirability early, before anything goes into the delivery backlog.</p>
+      </div><div class="wide">
+        <Image class="full-image" src={ai_journeyMap1} alt="Journey explorer showing live metrics and AI-surfaced patterns feeding into prioritised solutions" loading="lazy" decoding="async" widths={[720,1080,1440]} sizes="(max-width:78rem) 100vw, 78rem"/>
+      </div></div><div class="sub" id="ai-prototyping-3"><p class="section-kicker">Rapid Prototyping</p><h3>Testing ideas before committing to build.</h3><div class="sub-grid">
+        <div class="sub-text">
+          
+          
+          <p>AI-assisted prototyping tools can scan a live product and generate a working replica with a new feature integrated — so users test in context rather than against an abstract mockup. The result is more accurate feedback about whether the design works in the real environment.</p>
+          <p>Figma's AI tools assist with variant generation, accessibility checking, and spec annotation — reducing the documentation overhead that would otherwise compete with design and testing time.</p>
         </div>
-        <div class="section-image"><Image class="aside-img" src={ds2} alt="Component anatomy and usage documentation" loading="lazy" /></div>
-      </section>
-    </main>
-  </div>
+      </div><div class="wide">
+        <Image class="full-image" src={ai_travelWireframes} alt="Travel booking wireframes showing rapid prototype flow across search, detail, and payment screens" loading="lazy" decoding="async" widths={[720,1080,1440]} sizes="(max-width:78rem) 100vw, 78rem"/>
+      </div></div><div class="sub" id="ai-prototyping-4"><p class="section-kicker">Orchestration Layer</p><h3>Institutional knowledge made accessible across a distributed team.</h3><div class="sub-grid">
+        <div class="sub-text">
+          
+          
+          <p>As the Experience Design team reduced in size, institutional knowledge became a risk. Individual designers knew things that were not documented. When someone left, that knowledge went with them.</p>
+          <p>The orchestration layer addressed this by connecting the design system documentation, journey maps, research repository, live products, and internal standards — WCAG guidelines, solution architecture, brand requirements, legal constraints — into a single queryable source via a Slackbot. A designer in a product squad could ask a question in the channel they were already working in and get a synthesised answer from all available sources rather than searching across four tools manually.</p>
+          <p>The outcome: a smaller team maintaining the same delivery quality and knowledge access because the institutional knowledge was finally accessible rather than locked in individual heads or buried in folders.</p>
+        </div>
+      </div><div class="wide">
+        <Image class="full-image" src={ai_orchestration} alt="Orchestration layer architecture showing business inputs, design tools, AI knowledge layer, and delivered outputs" loading="lazy" decoding="async" widths={[720,1080,1440]} sizes="(max-width:78rem) 100vw, 78rem"/>
+      </div></div></section>
+<FreelanceChapter />
+</div></div>
+</main>
 </Layout>

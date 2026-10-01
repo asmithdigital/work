@@ -1,184 +1,23 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
-import { projects } from '../data/projects';
+import { Image } from 'astro:assets';
+import '../styles/portfolio.css';
+import qtb from '../assets/images/raa-qtb-start.png';
+import ds from '../assets/images/design-system-2.png';
 ---
-<Layout
-  title="Andrew Smith | Product Designer & Front-End Developer"
-  description="Andrew Smith, product designer and front-end developer in Adelaide. Twenty years from hand-coded websites to design systems and complex digital products."
-  showFooterCta={true}
->
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="page">
-    <SiteHeader />
-    <main id="main-content">
-      <section class="hero" id="top">
-        <div class="hero-copy">
-          <h1 class="display-title">Hi, I'm Andrew. A product designer who started in code.</h1>
-          <p class="hero-text">Twenty years building for the web, first as a front-end developer, then as a product designer working inside Agile product teams. I design complex digital products, build design systems in code, and still write code today to prototype quickly. In the past year I have also led a UX team alongside the work.</p>
-          <p class="hero-note" id="about">Adelaide, South Australia. Currently studying product management.</p>
-        </div>
-      </section>
-
-      <section class="projects" id="work">
-        <div class="projects-grid">
-          {projects.map((project, index) => (
-            <a class="project-link" href={project.href}>
-              <article class={`project-card ${project.background}`}>
-                <div class="project-header">
-                  <p class="project-name">{project.name}</p>
-                </div>
-                <h2 class="project-title">{project.title}</h2>
-                <div class={`project-visual ${project.variant}`}>
-                  <Image
-                    class={project.imageClass}
-                    src={project.image}
-                    alt={project.alt}
-                    loading={index < 2 ? 'eager' : 'lazy'}
-                    decoding="async"
-                    widths={[480, 720, 960]}
-                    sizes="(max-width: 980px) 100vw, 50vw"
-                  />
-                </div>
-              </article>
-            </a>
-          ))}
-        </div>
-      </section>
-    </main>
+<Layout title="Andrew Smith | Product Designer & Front-End Developer" description="Andrew Smith, product designer and front-end developer in Adelaide. Twenty years from hand-coded websites to design systems and complex digital products." showFooterCta={true}>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<SiteHeader />
+<main id="main-content" class="home">
+  <p class="eyebrow">Product designer &amp; front-end developer</p>
+  <h1>Hi, I'm Andrew. A product designer who started in code.</h1>
+  <p class="hero-lede">Twenty years building for the web, first as a front-end developer, then as a product designer inside Agile product teams. I design complex digital products, build design systems in code, and still write code today to prototype quickly.</p>
+  <ul class="facts"><li>Adelaide, South Australia</li><li>20 years</li><li>Currently studying product management</li></ul>
+  <div class="tiles">
+    <a class="tile" href="/work/design"><Image src={qtb} alt="Quote to buy" /><div><h2>Design</h2><p>UX and product process, workshops and sprints, journey mapping, benchmarking, UI design and design systems.</p></div></a>
+    <a class="tile" href="/work/development"><Image src={ds} alt="Design system" /><div><h2>Development</h2><p>Hand-coded sites, a university design system, design systems in code and AI-assisted prototyping.</p></div></a>
   </div>
+  <p class="lede" style="margin-top:32px">Freelance and graphic design work sits at the bottom of both pages. <a href="/work/resume">View my resume</a>.</p>
+</main>
 </Layout>
-
-<style>
-  .page {
-    position: relative;
-    width: min(calc(100% - 3rem), 78rem);
-    margin: 0 auto;
-    padding: 1.25rem 0 5rem;
-  }
-
-  .project-name {
-    font-family: var(--font-mono);
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    line-height: 1.4;
-    text-transform: uppercase;
-    margin: 0;
-    color: var(--muted-foreground);
-  }
-
-  .hero {
-    padding: 7rem 0 6.5rem;
-  }
-
-  .hero-copy {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .display-title {
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-    font-weight: 800;
-    letter-spacing: -0.05em;
-    line-height: 1.06;
-    margin: 0 0 0;
-    max-width: 18ch;
-  }
-
-  .hero-text {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: var(--muted-foreground);
-    margin: 1.5rem 0 0;
-    max-width: 38rem;
-  }
-
-  .hero-note {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: var(--muted-foreground);
-    font-style: italic;
-    margin: 0.75rem 0 0;
-    max-width: 38rem;
-  }
-
-  .projects {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  .project-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
-  .project-card {
-    border-radius: 1.5rem;
-    padding: 1.5rem 1.5rem 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    transition: transform 120ms ease, box-shadow 120ms ease;
-    height: 26rem;
-  }
-
-  .project-link:hover .project-card {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 40px rgba(23,23,23,0.12);
-  }
-
-  .project-card.lime   { background: #d4f5b0; }
-  .project-card.cyan   { background: #b0eaf5; }
-  .project-card.lavender { background: #d0c8f5; }
-  .project-card.mint   { background: #b0f0d8; }
-
-  .project-card .project-name { color: rgba(23,23,23,0.55); }
-  .project-card.cyan .project-title,
-  .project-card.mint .project-title { color: #171717; }
-
-  .project-title {
-    font-size: clamp(1rem, 1.4vw, 1.3rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-    margin: 0;
-    color: #171717;
-    max-width: 30ch;
-  }
-
-  .project-visual {
-    margin-top: auto;
-    overflow: hidden;
-    border-radius: 0.75rem 0.75rem 0 0;
-    flex: 1;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .project-preview-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 0.75rem 0.75rem 0 0;
-    object-fit: cover;
-    object-position: top center;
-  }
-
-  @media(max-width: 860px) {
-    .projects-grid { grid-template-columns: 1fr; }
-    .project-card { height: auto; min-height: 20rem; }
-    .project-visual { flex: 0 0 auto; margin-top: 1rem; height: 160px; }
-    .hero { padding: 4rem 0 3rem; }
-  }
-</style>

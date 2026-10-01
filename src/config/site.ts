@@ -34,7 +34,6 @@ export const siteConfig: SiteConfig = {
 	navLinks: [
 		{ href: '/work/design', label: 'Design' },
 		{ href: '/work/development', label: 'Development' },
-		{ href: '/work/freelance', label: 'Freelance' },
 		{ href: '/work/resume', label: 'Resume' },
 	],
 	extraPages: [],
