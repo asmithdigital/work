@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import "../styles/case-study.css";
+import ds1 from '../assets/images/design-system-1.png';
+import ds2 from '../assets/images/design-system-2.png';
+import btn from '../assets/images/raa-ds-buttons.png';
+import uofa from '../assets/images/uofa-banner.png';
+---
+<Layout title="Development | Andrew Smith" description="Front-end development from hand-coded websites to a JavaScript design system and working prototypes." showFooterCta={true}>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="case-page">
+    <SiteHeader />
+    <main id="main-content">
+      <section class="case-hero">
+        <p class="eyebrow"><a class="breadcrumb-link" href="/work/">Home</a><span class="breadcrumb-separator">/</span><span>Development</span></p>
+        <h1 class="display-title">I started in code, and I still write it.</h1>
+        <p class="hero-text">I began as a self-taught web designer and front-end developer, hand-coding HTML, CSS and JavaScript for clients. That background shapes how I design: feasibility conversations with engineers start from shared understanding.</p>
+      </section>
+      <section class="lead-image-section"><Image class="lead-image" src={ds1} alt="Design system component documentation" /></section>
+      <section class="content-section">
+        <div class="section-content">
+          <p class="section-kicker">Early career</p>
+          <h2>Building websites since 1999.</h2>
+          <p>Agency, media and corporate work, including hand-coded client sites at Vmedia and a CMS platform delivered with an offshore development team at Viterra. Freelance design and development has run alongside every role since 2004.</p>
+        </div>
+        <div class="section-image"><Image class="aside-img" src={btn} alt="Design system button components" loading="lazy" /></div>
+      </section>
+      <section class="content-section">
+        <div class="section-content">
+          <p class="section-kicker">University of Adelaide</p>
+          <h2>A JavaScript design system adopted across every development team.</h2>
+          <p>As lead web designer and front-end developer I designed and built the university's public website and student portals, worked with engineers on architecture, Git workflows and component frameworks, and custom-built a JavaScript design system that established shared standards and reduced rework. I introduced UX as a formal practice there, and it has since grown into a full UX department.</p>
+        </div>
+        <div class="section-image"><Image class="aside-img" src={uofa} alt="University of Adelaide website" loading="lazy" /></div>
+      </section>
+      <section class="content-section">
+        <div class="section-content">
+          <p class="section-kicker">Today</p>
+          <h2>Rapid prototyping and design systems in code.</h2>
+          <p>I still write code, now with AI tools, to build working prototypes, design tokens and design system components. A working prototype lets the team test feasibility and desirability early, before anything goes into the delivery backlog.</p>
+        </div>
+        <div class="section-image"><Image class="aside-img" src={ds2} alt="Component anatomy and usage documentation" loading="lazy" /></div>
+      </section>
+    </main>
+  </div>
+</Layout>

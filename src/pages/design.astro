@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import "../styles/case-study.css";
+import travel from '../assets/images/raa-travel-home.png';
+import acct from '../assets/images/my-account.png';
+import pay from '../assets/images/payment-portal.png';
+import qtb from '../assets/images/raa-qtb-start.png';
+import jm from '../assets/images/journey-map-1.png';
+import sprint from '../assets/images/travel-sprint-affinity.jpg';
+import ds from '../assets/images/design-system-2.png';
+---
+<Layout title="Design | Andrew Smith" description="Product design across travel, insurance, payments and member services at RAA." showFooterCta={true}>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="case-page">
+    <SiteHeader />
+    <main id="main-content">
+      <section class="case-hero">
+        <p class="eyebrow"><a class="breadcrumb-link" href="/work/">Home</a><span class="breadcrumb-separator">/</span><span>Design</span></p>
+        <h1 class="display-title">Product design for complex digital products.</h1>
+        <p class="hero-text">Seven years at RAA designing end to end across travel, insurance, payments, renewals, identity and the member portal, as part of the product trio with product managers and engineers. Journey mapping, design systems, workshops and sprints are all part of the same design process.</p>
+      </section>
+      <section class="lead-image-section"><Image class="lead-image" src={travel} alt="RAA Travel homepage" /></section>
+      <section class="content-section">
+        <div class="section-content">
+          <p class="section-kicker">Shipped work</p>
+          <h2>From the travel site to the member portal.</h2>
+          <p>I lead UX and UI across RAA Travel, including online search and book and the travel agent booking system connected to middleware, as well as My Account, payments, renewals, claims and identity management. The work runs from discovery through to shipped and measured outcomes.</p>
+        </div>
+        <div class="section-image"><Image class="aside-img" src={acct} alt="RAA My Account" loading="lazy" /></div>
+      </section>
+      <section class="content-section">
+        <div class="section-content">
+          <p class="section-kicker">Discovery</p>
+          <h2>Finding the real problem before building.</h2>
+          <p>I run discovery alongside delivery: in-person member interviews, analytics and NPS review, workshops and design sprints with product, engineering and the business. A sprint on the insurance quote and purchase experience showed that member identity matching, not payment options, was the real conversion blocker. That finding redirected the roadmap, and authenticated quote-to-buy is now live for motor insurance.</p>
+        </div>
+        <div class="section-image"><Image class="aside-img" src={sprint} alt="Design sprint affinity mapping" loading="lazy" /></div>
+      </section>
+      <section class="content-section">
+        <div class="section-content">
+          <p class="section-kicker">Journey mapping and measurement</p>
+          <h2>Evidence that guides what gets built next.</h2>
+          <p>Journey maps connect analytics, research, NPS and usability benchmarking into one shared view of the experience. Research operations, a repository, a metrics framework and a standard testing process, give the team a repeatable way to see whether changes are working.</p>
+        </div>
+        <div class="section-image"><Image class="aside-img" src={jm} alt="Journey map" loading="lazy" /></div>
+      </section>
+      <section class="content-section">
+        <div class="section-content">
+          <p class="section-kicker">Design systems</p>
+          <h2>Consistency that lets teams move faster.</h2>
+          <p>Documented components, accessibility built in at component level through a partnership with Vision Australia, and governance across design and engineering squads. See the Development page for the code side.</p>
+        </div>
+        <div class="section-image"><Image class="aside-img" src={ds} alt="Design system documentation" loading="lazy" /></div>
+      </section>
+      <section class="content-section">
+        <div class="section-content">
+          <p class="section-kicker">Payments and quoting</p>
+          <h2>Designing for high-stakes flows.</h2>
+          <p>Payments, renewals and quote-to-buy are flows where a wrong step has real consequences, so they are prototyped, tested with members and refined before build.</p>
+        </div>
+        <div class="section-image"><Image class="aside-img" src={pay} alt="RAA payment portal" loading="lazy" /></div>
+      </section>
+    </main>
+  </div>
+</Layout>
