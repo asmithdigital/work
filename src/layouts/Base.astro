@@ -1,0 +1,27 @@
+---
+import '../styles/site.css';
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <link rel="icon" href={base + '/favicon.svg'} type="image/svg+xml" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a href={base + '/'}>Andrew Smith</a>
+      <nav><a href={base + '/'}>Work</a><a href="mailto:asmithdigital@gmail.com">Contact</a></nav>
+    </header>
+    <slot />
+    <footer class="foot"><span>Andrew Smith, Digital UX and Product Designer</span><a href="mailto:asmithdigital@gmail.com">asmithdigital@gmail.com</a></footer>
+  </div>
+</body>
+</html>

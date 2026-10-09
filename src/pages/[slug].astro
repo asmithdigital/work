@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { projects } from '../data/projects';
+export function getStaticPaths() {
+  return projects.map((p, i) => ({ params: { slug: p.slug }, props: { p, prev: projects[i - 1], next: projects[i + 1] } }));
+}
+const { p, prev, next } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base title={`${p.title} | Andrew Smith`} description={p.summary}>
+  <main>
+    <a class="back" href={`${base}/`}>&larr; All work</a>
+    <header class="case-head">
+      <h1>{p.title}</h1>
+      <p class="summary">{p.summary}</p>
+      <dl class="meta">
+        <div><dt>Role</dt><dd>{p.role}</dd></div>
+        <div><dt>Worked with</dt><dd>{p.team}</dd></div>
+        <div><dt>Focus</dt><dd>{p.focus}</dd></div>
+      </dl>
+    </header>
+    <div class="hero"><Image src={p.hero} alt={p.heroAlt} widths={[900, 1400]} sizes="1100px" /></div>
+    <div class="block lead">{p.intro.map((t) => <p>{t}</p>)}</div>
+    {p.sections.map((s) => (
+      <>
+        <section class="block"><h2>{s.heading}</h2>{s.paragraphs.map((t) => <p>{t}</p>)}</section>
+        {s.shots && (
+          <div class={p.bigShots ? 'shots big' : 'shots'}>
+            {s.shots.map((sh) => (<figure><Image src={sh.src} alt={sh.alt} widths={[600, 1000]} sizes="540px" loading="lazy" />{sh.caption && <figcaption>{sh.caption}</figcaption>}</figure>))}
+          </div>
+        )}
+      </>
+    ))}
+    {p.outcomes && (<section class="outcomes"><h2>Outcomes</h2><ul>{p.outcomes.map((o) => <li>{o}</li>)}</ul></section>)}
+    <nav class="pager" aria-label="Case studies">
+      {prev ? <a class="prev" href={`${base}/${prev.slug}`}><small>&larr; Previous</small><strong>{prev.title}</strong></a> : <span></span>}
+      {next ? <a class="next" href={`${base}/${next.slug}`}><small>Next &rarr;</small><strong>{next.title}</strong></a> : <span></span>}
+    </nav>
+  </main>
+</Base>

@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://asmithdigital.github.io',
-  base: '/work',
+  base: process.env.SITE_BASE || '/work',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

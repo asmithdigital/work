@@ -1,8 +1,0 @@
----
-const path = Astro.url.pathname.replace(/\/$/, '');
-const links = [['Design', '/work/design'], ['Development', '/work/development'], ['Resume', '/work/resume']];
----
-<header class="top">
-  <a class="brand" href="/work/">Andrew Smith</a>
-  <nav>{links.map(([l, h]) => <a href={h} aria-current={path === h ? 'page' : undefined}>{l}</a>)}</nav>
-</header>
