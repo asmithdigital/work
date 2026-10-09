@@ -82,7 +82,7 @@ export const projects: Project[] = [
     hero: f1a, heroAlt: 'Freelance website project', bigShots: true,
     intro: ['I have run my own design and development practice alongside my full-time roles, managing every part of the work myself: engaging stakeholders, running workshops, designing and coding the sites, iterating with the client, and training them to manage the result.'],
     sections: [
-      { heading: 'Selected work', paragraphs: ['Pali Footwear, a Shopify e-commerce website. Chair covers, a WordPress e-commerce site. Basco\u2019s Podiatry and a recent yoga website, both on WordPress. And many more.'], shots: [f1b, f1c, f1d, f2a, f2b, f2c, f3a, f3b, f4a].map((src, i) => ({ src, alt: 'Freelance website ' + (i + 1) })) },
+      { heading: 'Selected work', paragraphs: ['Pali Footwear, a Shopify e-commerce website. Chair covers, a WordPress e-commerce site. Bass Coast Podiatry and a recent yoga website, both on WordPress. And many more.'], shots: [f1b, f1c, f1d, f2a, f2b, f2c, f3a, f3b, f4a].map((src, i) => ({ src, alt: 'Freelance website ' + (i + 1) })) },
     ],
   },
 ];
